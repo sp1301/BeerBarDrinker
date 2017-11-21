@@ -1,0 +1,36 @@
+<h1>{{load}}</h1>
+
+<div class="card" style="width: 100%" *ngFor="let bars of Bars">
+  <div class="card-block">
+      <div class="container">
+        <div class= "row">
+          <h4 class="card-title">{{bars.Name}}</h4>
+    </div>
+
+      <div class= "row">
+        <div class= "col">
+        <p class="card-text"> This bar is this Popular {{bars.Matches}}!</p>
+        </div>
+        <div class= "col">
+           <p class="card-text"> City: {{bars.City}}</p>
+        </div>
+      </div>
+      <div class= "row">
+        <div class= "col">
+        <p class="card-text"> Happy Hour: {{bars.HappyHour}}</p>
+        </div>
+        <div class= "col">
+           <p class="card-text"> Personality: {{bars.Personality}}</p>
+        </div>
+      </div>
+      <div class= "row">
+        <div class= "col">
+        <p class="card-text"> Phone Number: {{bars.PhoneNum}}</p>
+        </div>
+        <div class= "col">
+           <p></p>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>

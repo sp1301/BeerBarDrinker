@@ -1,0 +1,84 @@
+<h5><p>Hello, please enter your information so we can help you find a good bar match!</p></h5>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label>Name</label>
+      <input class="form-control" id="inputName"  [(ngModel)]="inputName" type="text">
+    </div>
+    <div class="col">
+      <label>City</label>
+      <input class="form-control" id="inputCity" [(ngModel)]="inputCity" type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    <label for="inputPhone">Phone Number</label>
+    <input class="form-control input-lg" id="inputPhone" [(ngModel)]="inputPhone" type="text">
+    </div>
+    <div class="col">
+    <label for="inputAge">Age</label>
+    <input class="form-control input-lg" id="inputAge" [(ngModel)]="inputAge" type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <label for="inputHappy">Perferred Happy Hour Time (Miltitary Time)</label>
+    <input class="form-control input-lg" id="inputHappy" [(ngModel)]="inputHappy" type="text">
+    </div>
+  </div>
+    <div class="col">
+      <a> </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+<label>Preferred Music Genre</label>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{musicdropdown}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+    <ng-container *ngFor="let musics of music">
+      <a class="dropdown-item" (click) ="updateMusicDropDown(musics)">{{musics}}</a>
+    </ng-container>
+  </div>
+</div>
+    </div>
+    <div class="col">
+<label>Persionality</label>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{personalitydropdown}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+    <ng-container *ngFor="let personalities of personality">
+      <a class="dropdown-item" (click) ="updatePersonalityDropDown(personalities)">{{personalities}}</a>
+    </ng-container>
+  </div>
+</div>
+    </div>
+  </div>
+    <div class="row" style="margin: 20px;">
+    <div class="col">
+      <angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" 
+    [settings]="dropdownSettings" 
+    (onSelect)="onItemSelect($event)" 
+    (onDeSelect)="OnItemDeSelect($event)"
+    (onSelectAll)="onSelectAll($event)"
+    (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
+    </div>
+  </div>
+  <div class="row" style="margin: 20px;">
+    <div class="col">
+      <input class="btn btn-primary" type="button" value="Submit" (click)="Submit()"> 
+    </div>
+    <div class="col">
+      <h4>{{Message}}</h4>
+    </div>
+  </div>
+</div>

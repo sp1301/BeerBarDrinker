@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row" style="margin-top:20px;">
+    <div class="col">
+      <label>Name</label>
+      <input class="form-control" id="inputName"  [(ngModel)]="inputName" type="text">
+    </div>
+    <div class="col">
+      <label>Phone Number</label>
+      <input class="form-control" id="inputPhone" [(ngModel)]="inputPhone" type="text">
+    </div>
+    <div class="col">
+       <label>Select Query</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Query
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <button type="button" class="btn btn-primary" (click)="Liked()">Bars That Sell Liked Beers</button>
+          <button type="button" class="btn btn-primary"  (click)="Ideal()">Find Me Ideal Bars</button>
+          <button type="button" class="btn btn-primary" (click)="CheapBeer()">Cheap Liked Beer</button>
+          <button type="button" class="btn btn-primary" (click)="PerfectBarFind()">Find Me My Perfect Bar</button>
+          <button type="button" class="btn btn-primary" (click)="BarMusFind()">Find Bars Based on Bartender and Music</button>
+          <button type="button" class="btn btn-primary" (click)="PopBarfind()">Find Me Popular Bars</button>
+          <button type="button" class="btn btn-primary" (click)="OutOf()">Place to Move With Bars That Fit Me</button>
+          <button type="button" class="btn btn-primary" (click)="minMax()">Prices of Beers I like then Others</button>
+        </div>
+      </div>
+    </div>     
+    <div class="col">
+      <h3>{{Message}}</h3> 
+    </div>  
+  </div>
+</div>
+
+<div *ngIf="LikedBool" >
+    <router-outlet name = "user"></router-outlet>
+</div>
+<div *ngIf="IdealBool">
+    <router-outlet name = "userideal"></router-outlet>
+</div>
+<div *ngIf="CheapBeerBool">
+    <router-outlet name = "usercheapbeer"></router-outlet>
+</div>
+<div *ngIf="PerfectBool">
+    <router-outlet name = "userperfect"></router-outlet>
+</div>
+<div *ngIf="BarMusBool">
+    <router-outlet name = "userbarmus"></router-outlet>
+</div>
+<div *ngIf="PopBarBool">
+    <router-outlet name = "userpopbar"></router-outlet>
+</div>
+<div *ngIf="OutoFBool">
+    <router-outlet name = "useroutof"></router-outlet>
+</div>
+<div *ngIf="MinMaxBool">
+    <router-outlet name = "userminmax"></router-outlet>
+</div>

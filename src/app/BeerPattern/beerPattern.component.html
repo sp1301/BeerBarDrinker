@@ -1,0 +1,20 @@
+<h1>{{load}}</h1>
+
+<div class="card" style="width: 100%" *ngFor="let bars of Bars">
+  <div class="card-block">
+      <div class="container">
+        <div class= "row">
+          <h4 class="card-title">{{bars.Beer}}</h4>
+    </div>
+
+      <div class= "row">
+        <div class= "col">
+        <p class="card-text"> Prices Min: {{bars.MinPrice}}</p>
+        </div>
+        <div class= "col">
+           <p class="card-text"> Max: {{bars.MaxPrice}}</p>
+        </div>
+      </div>     
+    </div>
+  </div>
+</div>
