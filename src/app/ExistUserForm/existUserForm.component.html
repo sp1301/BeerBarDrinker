@@ -16,13 +16,14 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <button type="button" class="btn btn-primary" (click)="Liked()">Bars That Sell Liked Beers</button>
-          <button type="button" class="btn btn-primary"  (click)="Ideal()">Find Me Ideal Bars</button>
+          <button type="button" class="btn btn-primary" (click)="Ideal()">Find Me Ideal Bars</button>
           <button type="button" class="btn btn-primary" (click)="CheapBeer()">Cheap Liked Beer</button>
           <button type="button" class="btn btn-primary" (click)="PerfectBarFind()">Find Me My Perfect Bar</button>
-          <button type="button" class="btn btn-primary" (click)="BarMusFind()">Find Bars Based on Bartender and Music</button>
+          <button type="button" class="btn btn-primary" (click)="BarMusFind()">Find Bars Not Based On Beer</button>
           <button type="button" class="btn btn-primary" (click)="PopBarfind()">Find Me Popular Bars</button>
           <button type="button" class="btn btn-primary" (click)="OutOf()">Place to Move With Bars That Fit Me</button>
-          <button type="button" class="btn btn-primary" (click)="minMax()">Prices of Beers I like then Others</button>
+          <button type="button" class="btn btn-primary" (click)="minMax()">Prices of Beers I Like Than Others</button>
+          <button type="button" class="btn btn-primary" (click)="myRating()">Show My Ratings of Bars</button>
         </div>
       </div>
     </div>     
@@ -55,4 +56,7 @@
 </div>
 <div *ngIf="MinMaxBool">
     <router-outlet name = "userminmax"></router-outlet>
+</div>
+<div *ngIf="MyRatingBool">
+    <router-outlet name = "usermyrating"></router-outlet>
 </div>

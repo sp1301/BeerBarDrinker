@@ -18,6 +18,9 @@ import { BartenderMusicBar } from 'app/BartenderMusicBar/bartenderMusicBar.compo
 import { PopBar } from 'app/PopBar/popBar.component';
 import { OutOfCity } from 'app/OutOfCity/outOfCity.component';
 import { BeerPattern } from 'app/BeerPattern/beerPattern.component';
+import { ShowMyRating } from 'app/ShowMyRating/showMyRating.component';
+import { BarsAtDiffrentCities } from 'app/BarsAtDiffrentCities/barsAtDiffrentCities.component';
+import { DiffCityIdealBarFinder } from 'app/DiffCityIdealBarFinder/diffCityIdealBarFinder.component';
 
 import { WebService} from './web.service';
 import { PostsService } from './posts.service';
@@ -45,6 +48,9 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2
     PopBar,
     OutOfCity,
     BeerPattern,
+    ShowMyRating,
+    BarsAtDiffrentCities,
+    DiffCityIdealBarFinder,
     KeysPipe
   ],
   imports: [

@@ -27,6 +27,7 @@ export class ExistUserFormComponent implements OnInit {
   PopBarBool:boolean = false;
   OutoFBool:boolean = false;
   MinMaxBool:boolean = false;
+  MyRatingBool:boolean = false;
 
     user: UserLoginDetails = {        
     name: "",
@@ -38,6 +39,8 @@ export class ExistUserFormComponent implements OnInit {
   }
 
   Liked(){
+    this.Message = "";
+
       if(this.inputName == "" || this.inputPhone == "")
     {
       this.Message = "Please Fill The Whole Form";
@@ -61,7 +64,11 @@ export class ExistUserFormComponent implements OnInit {
       this.PopBarBool = false;
       this.OutoFBool = false;
       this.MinMaxBool = false;
-      this.router.navigate([`/existUserForm`, { outlets: { 'user': [this.user.name  +','+ this.user.phone], 'userideal': [], 'usercheapbeer':[], 'userperfect':[], 'userbarmus':[], 'userpopbar':[], 'useroutof':[], 'userminmax':[]} }], { relativeTo: this.route });
+      this.MyRatingBool = false;
+      this.router.navigate([`/existUserForm`, { outlets: { 'user': [this.user.name  +','+ this.user.phone], 'userideal': [], 'usercheapbeer':[], 'userperfect':[], 'userbarmus':[], 'userpopbar':[], 'useroutof':[], 'userminmax':[], 'usermyrating':[]} }], { relativeTo: this.route });
+      }
+      else{
+        this.Message =  this.inputName + " is Not In The Database.";
       }
 
     });
@@ -71,6 +78,8 @@ export class ExistUserFormComponent implements OnInit {
 
 
     Ideal(){
+      this.Message = "";
+
       if(this.inputName == "" || this.inputPhone == "")
     {
       this.Message = "Please Fill The Whole Form";
@@ -94,7 +103,11 @@ export class ExistUserFormComponent implements OnInit {
       this.PopBarBool = false;
       this.OutoFBool = false;
       this.MinMaxBool = false;
-      this.router.navigate([`/existUserForm`, { outlets: { 'userideal': [this.user.name  +','+ this.user.phone], 'user': [], 'usercheapbeer':[], 'userperfect':[], 'userbarmus':[], 'userpopbar':[], 'useroutof':[], 'userminmax':[]} }], { relativeTo: this.route });
+      this.MyRatingBool = false;
+      this.router.navigate([`/existUserForm`, { outlets: { 'userideal': [this.user.name  +','+ this.user.phone], 'user': [], 'usercheapbeer':[], 'userperfect':[], 'userbarmus':[], 'userpopbar':[], 'useroutof':[], 'userminmax':[], 'usermyrating':[]} }], { relativeTo: this.route });
+      }
+      else{
+        this.Message =  this.inputName + " is Not In The Database.";
       }
 
     });
@@ -102,6 +115,8 @@ export class ExistUserFormComponent implements OnInit {
   }
 
       CheapBeer(){
+        this.Message = "";
+
       if(this.inputName == "" || this.inputPhone == "")
     {
       this.Message = "Please Fill The Whole Form";
@@ -125,13 +140,19 @@ export class ExistUserFormComponent implements OnInit {
       this.PopBarBool = false;
       this.OutoFBool = false;
       this.MinMaxBool = false;
-      this.router.navigate([`/existUserForm`, { outlets: {  'usercheapbeer':[this.user.name  +','+ this.user.phone], 'userideal': [], 'user': [], 'userperfect':[], 'userbarmus':[], 'userpopbar':[], 'useroutof':[], 'userminmax':[]} }], { relativeTo: this.route });
+      this.MyRatingBool = false;
+      this.router.navigate([`/existUserForm`, { outlets: {  'usercheapbeer':[this.user.name  +','+ this.user.phone], 'userideal': [], 'user': [], 'userperfect':[], 'userbarmus':[], 'userpopbar':[], 'useroutof':[], 'userminmax':[], 'usermyrating':[]} }], { relativeTo: this.route });
+      }
+      else{
+        this.Message =  this.inputName + " is Not In The Database.";
       }
 
     });
     }
   }
       PerfectBarFind(){
+        this.Message = "";
+
       if(this.inputName == "" || this.inputPhone == "")
     {
       this.Message = "Please Fill The Whole Form";
@@ -155,7 +176,11 @@ export class ExistUserFormComponent implements OnInit {
       this.PopBarBool = false;
       this.OutoFBool = false;
       this.MinMaxBool = false;
-      this.router.navigate([`/existUserForm`, { outlets: {  'userperfect':[this.user.name  +','+ this.user.phone], 'usercheapbeer':[], 'userideal': [], 'user': [], 'userbarmus':[], 'userpopbar':[], 'useroutof':[], 'userminmax':[]} }], { relativeTo: this.route });
+      this.MyRatingBool = false;
+      this.router.navigate([`/existUserForm`, { outlets: {  'userperfect':[this.user.name  +','+ this.user.phone], 'usercheapbeer':[], 'userideal': [], 'user': [], 'userbarmus':[], 'userpopbar':[], 'useroutof':[], 'userminmax':[], 'usermyrating':[]} }], { relativeTo: this.route });
+      }
+      else{
+        this.Message =  this.inputName + " is Not In The Database.";
       }
 
     });
@@ -163,6 +188,8 @@ export class ExistUserFormComponent implements OnInit {
   }
 
       BarMusFind(){
+        this.Message = "";
+
       if(this.inputName == "" || this.inputPhone == "")
     {
       this.Message = "Please Fill The Whole Form";
@@ -186,13 +213,19 @@ export class ExistUserFormComponent implements OnInit {
       this.PopBarBool = false;
       this.OutoFBool = false;
       this.MinMaxBool = false;
-      this.router.navigate([`/existUserForm`, { outlets: { 'userbarmus':[this.user.name  +','+ this.user.phone], 'userperfect':[], 'usercheapbeer':[], 'userideal': [], 'user': [], 'userpopbar':[], 'useroutof':[], 'userminmax':[]} }], { relativeTo: this.route });
+      this.MyRatingBool = false;
+      this.router.navigate([`/existUserForm`, { outlets: { 'userbarmus':[this.user.name  +','+ this.user.phone], 'userperfect':[], 'usercheapbeer':[], 'userideal': [], 'user': [], 'userpopbar':[], 'useroutof':[], 'userminmax':[], 'usermyrating':[]} }], { relativeTo: this.route });
+      }
+      else{
+        this.Message =  this.inputName + " is Not In The Database.";
       }
 
     });
     }
   }
   PopBarfind(){
+    this.Message = "";
+
       if(this.inputName == "" || this.inputPhone == "")
     {
       this.Message = "Please Fill The Whole Form";
@@ -216,13 +249,19 @@ export class ExistUserFormComponent implements OnInit {
       this.PopBarBool = true;
       this.OutoFBool = false;
       this.MinMaxBool = false;
-      this.router.navigate([`/existUserForm`, { outlets: { 'userpopbar':[this.user.name  +','+ this.user.phone], 'userbarmus':[], 'userperfect':[], 'usercheapbeer':[], 'userideal': [], 'user': [], 'useroutof':[], 'userminmax':[]} }], { relativeTo: this.route });
+      this.MyRatingBool = false;
+      this.router.navigate([`/existUserForm`, { outlets: { 'userpopbar':[this.user.name  +','+ this.user.phone], 'userbarmus':[], 'userperfect':[], 'usercheapbeer':[], 'userideal': [], 'user': [], 'useroutof':[], 'userminmax':[], 'usermyrating':[]} }], { relativeTo: this.route });
+      }
+      else{
+        this.Message =  this.inputName + " is Not In The Database.";
       }
 
     });
     }
   }
   OutOf(){
+    this.Message = "";
+
       if(this.inputName == "" || this.inputPhone == "")
     {
       this.Message = "Please Fill The Whole Form";
@@ -246,13 +285,19 @@ export class ExistUserFormComponent implements OnInit {
       this.PopBarBool = false;
       this.OutoFBool = true;
       this.MinMaxBool = false;
-      this.router.navigate([`/existUserForm`, { outlets: { 'useroutof':[this.user.name  +','+ this.user.phone], 'userpopbar':[], 'userbarmus':[], 'userperfect':[], 'usercheapbeer':[], 'userideal': [], 'user': [], 'userminmax':[]} }], { relativeTo: this.route });
+      this.MyRatingBool = false;
+      this.router.navigate([`/existUserForm`, { outlets: { 'useroutof':[this.user.name  +','+ this.user.phone], 'userpopbar':[], 'userbarmus':[], 'userperfect':[], 'usercheapbeer':[], 'userideal': [], 'user': [], 'userminmax':[], 'usermyrating':[]} }], { relativeTo: this.route });
+      }
+      else{
+        this.Message =  this.inputName + " is Not In The Database.";
       }
 
     });
     }
   }
   minMax(){
+    this.Message = "";
+
       if(this.inputName == "" || this.inputPhone == "")
     {
       this.Message = "Please Fill The Whole Form";
@@ -276,11 +321,50 @@ export class ExistUserFormComponent implements OnInit {
       this.PopBarBool = false;
       this.OutoFBool = false;
       this.MinMaxBool = true;
-      this.router.navigate([`/existUserForm`, { outlets: { 'userminmax':[this.user.name  +','+ this.user.phone], 'useroutof':[], 'userpopbar':[], 'userbarmus':[], 'userperfect':[], 'usercheapbeer':[], 'userideal': [], 'user': []} }], { relativeTo: this.route });
+      this.MyRatingBool = false;
+      this.router.navigate([`/existUserForm`, { outlets: { 'userminmax':[this.user.name  +','+ this.user.phone], 'useroutof':[], 'userpopbar':[], 'userbarmus':[], 'userperfect':[], 'usercheapbeer':[], 'userideal': [], 'user': [], 'usermyrating':[]} }], { relativeTo: this.route });
+      }
+      else{
+        this.Message =  this.inputName + " is Not In The Database.";
       }
 
     });
     }
   }
+  myRating(){
+    this.Message = "";
 
+      if(this.inputName == "" || this.inputPhone == "")
+    {
+      this.Message = "Please Fill The Whole Form";
+      return;
+    }
+    else{
+      this.user.name  = this.inputName;
+      this.user.phone  = this.inputPhone;
+      //console.log(this.userInfo);
+      this.webService.getUser(this.user).subscribe(res => {
+      this.returnString = JSON.stringify(res);
+      this.returnUser = JSON.parse(this.returnString);
+      //console.log(this.returnUser);
+      if(this.returnUser.length > 0){
+      //console.log(this.users);
+      this.LikedBool = false;
+      this.IdealBool = false;
+      this.CheapBeerBool = false;
+      this.PerfectBool = false;
+      this.BarMusBool = false;
+      this.PopBarBool = false;
+      this.OutoFBool = false;
+      this.MinMaxBool = false;
+      this.MyRatingBool = true;
+      this.router.navigate([`/existUserForm`, { outlets: { 'usermyrating':[this.user.name  +','+ this.user.phone], 'userminmax':[], 'useroutof':[], 'userpopbar':[], 'userbarmus':[], 'userperfect':[], 'usercheapbeer':[], 'userideal': [], 'user': []} }], { relativeTo: this.route });
+      }
+      else{
+        this.Message =  this.inputName + " is Not In The Database.";
+      }
+
+    });
+    }
+  }
 }

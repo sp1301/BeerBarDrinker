@@ -1,4 +1,3 @@
-<h1>{{load}}</h1>
 
 <div class="card" style="width: 100%" *ngFor="let bars of Bars">
   <div class="card-block">
@@ -9,14 +8,11 @@
 
     	<div class= "row">
     		<div class= "col">
-				<p class="card-text"> This Bar sells {{bars.Beers}} at ${{bars.Price}}</p>
+				<p class="card-text"> This bar Scored: {{bars.Matches}} Based on your Preferences!</p>
     		</div>
     		<div class= "col">
     			 <p class="card-text"> City: {{bars.City}}</p>
     		</div>
-            <div class= "col">
-                 <label>Rate This Bar (1-10)</label>
-            </div>
     	</div>
     	<div class= "row">
     		<div class= "col">
@@ -25,9 +21,6 @@
     		<div class= "col">
     			 <p class="card-text"> Personality: {{bars.Personality}}</p>
     		</div>
-            <div class= "col">
-                 <input class="form-control input-sm"  [(ngModel)]="rateBar" type="text">
-            </div>
     	</div>
     	<div class= "row">
     		<div class= "col">
@@ -36,9 +29,6 @@
     		<div class= "col">
     			 <p></p>
     		</div>
-            <div class= "col">
-                 <button type="button" class="btn btn-success" (click)="SubmitRate(bars.Name)">Submit  {{ResultMessage}}</button>
-            </div>
     	</div>    	
     </div>
   </div>

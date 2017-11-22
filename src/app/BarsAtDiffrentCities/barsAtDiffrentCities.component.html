@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row" style="margin-top:20px;">
+    <div class="col">
+      <label>Name</label>
+      <input class="form-control" id="inputName"  [(ngModel)]="inputName" type="text">
+    </div>
+    <div class="col">
+      <label>Phone Number</label>
+      <input class="form-control" id="inputPhone" [(ngModel)]="inputPhone" type="text">
+    </div>
+    <div class="col">
+       <label>Select City</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{pickedCity}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="container">
+            <div class="row" *ngFor="let cities of Cities">
+                <a (click)="clicked(cities.City)">{{cities.City}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>     
+    <div class="col">
+      <button type="button" class="btn btn-primary" (click)="lookUp()">Look Up Popular Bars at: {{pickedCity}}</button> 
+    </div>     
+    <div class="col">
+      <h3>{{Message}}</h3> 
+    </div>  
+  </div>
+</div>
+
+<router-outlet name = "userCityPop"></router-outlet>

@@ -61,7 +61,7 @@ export class PerfectBar implements OnInit {
       			this.webService.getPerfectBar(this.userFullDetail).subscribe(res => {
             this.Bars = res;
       			console.log(this.Bars);
-
+              this.Message = "";
             if(this.Bars.length < 1){
               this.Message = "There Is No Perfect Bar Near You, Unlucky.";
             }

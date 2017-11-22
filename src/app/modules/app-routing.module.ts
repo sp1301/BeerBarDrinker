@@ -14,6 +14,9 @@ import { BartenderMusicBar } from 'app/BartenderMusicBar/bartenderMusicBar.compo
 import { PopBar } from 'app/PopBar/popBar.component';
 import { OutOfCity } from 'app/OutOfCity/outOfCity.component';
 import { BeerPattern } from 'app/BeerPattern/beerPattern.component';
+import { ShowMyRating } from 'app/ShowMyRating/showMyRating.component';
+import { BarsAtDiffrentCities } from 'app/BarsAtDiffrentCities/barsAtDiffrentCities.component';
+import { DiffCityIdealBarFinder } from 'app/DiffCityIdealBarFinder/diffCityIdealBarFinder.component';
 
 const ROUTES = [
   {
@@ -35,7 +38,14 @@ const ROUTES = [
       { path: ':userdetailbarmus', component: BartenderMusicBar, outlet: 'userbarmus' },
       { path: ':userdetailpopbar', component: PopBar, outlet: 'userpopbar' },
       { path: ':userdetailoutof', component: OutOfCity, outlet: 'useroutof' },
-      { path: ':userdetailminmax', component: BeerPattern, outlet: 'userminmax' }
+      { path: ':userdetailminmax', component: BeerPattern, outlet: 'userminmax' },
+      { path: ':userdetailmyrating', component: ShowMyRating, outlet: 'usermyrating' }
+    ]
+  },
+  {
+  path: 'barsAtDiffrentCities', component: BarsAtDiffrentCities, 
+    children: [
+      { path: ':userCitydetailPop', component: DiffCityIdealBarFinder, outlet: 'userCityPop'}
     ]
   },
   {

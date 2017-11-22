@@ -1,0 +1,28 @@
+<h1>{{load}}</h1>
+
+<div class="card" style="width: 100%" *ngFor="let bars of Bars">
+  <div class="card-block">
+    <div class="container">
+      <div class= "row">
+        <h4 class="card-title">{{bars.Bar}}</h4>
+      </div>
+
+      <div class= "row">
+        <div class= "col">
+        <p class="card-text"> Name: {{bars.Name}}, Phone Number: {{bars.PhoneNum}}</p>
+        </div>
+        <div class= "col">
+           <p class="card-text">Your Rating of this bar is: {{bars.rating}}</p>
+        </div>        
+      </div> 
+      <div class= "row">
+        <div class= "col">
+              <input class="form-control input-sm"  [(ngModel)]="rateBar" type="text">
+        </div>
+        <div class= "col">
+           <button type="button" class="btn btn-success" (click)="UpdateRating(bars.Bar , bars.rating)">Update Rating  {{ResultMessage}}</button>
+        </div>
+      </div>    
+    </div>
+  </div>
+</div>

@@ -37,6 +37,7 @@ export class CheapestBeerBar implements OnInit {
     Bars: CheapBeerBar[] = [];
 
     ResultMessage: string = "";
+    load:string = "";
 
 
     ngOnInit() {
@@ -56,9 +57,13 @@ export class CheapestBeerBar implements OnInit {
 
             this.webService.getUser(this.user).subscribe(res => {
       			this.userFullDetail = res[0];
-
+            this.load = "One Second Please.";
       			this.webService.getCheapBeerBar(this.userFullDetail).subscribe(res => {
             this.Bars = res;
+            this.load = "";
+            if(this.Bars.length == 0){
+              this.load = "No Bars At Your City Sells Any Of Your Liked Beers, Sorry.";
+            }
       			console.log(this.Bars);
       			});
     		});										

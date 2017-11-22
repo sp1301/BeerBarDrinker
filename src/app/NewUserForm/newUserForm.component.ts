@@ -113,8 +113,6 @@ export class NewUserFormComponent implements OnInit {
 
 
   Submit():void{
-
-    
     this.userInfo.Name = this.inputName;
     this.userInfo.City = this.inputCity;
     this.userInfo.PhoneNum = this.inputPhone;
@@ -138,71 +136,48 @@ export class NewUserFormComponent implements OnInit {
       return;
     }
     else{
+      if(parseInt(this.userInfo.Age) >= 21){
       this.webService.getUser(this.userCheck).subscribe(res => {
         this.returnUser = res;
         console.log(this.returnUser.length);
         console.log(this.returnUser);
               if(this.returnUser.length == 0){
+                      this.selectedItems.forEach(select =>{
+                      var temp = { 
+                          Beer:select.itemName,
+                          PhoneNum: this.inputPhone, 
+                          Name: this.inputName
+                          };      
+                          this.PutBeersLike.push(temp);
+                      });
                       this.Message = "" + this.userInfo.Name + ": Saved"
                       this.webService.putUser(JSON.stringify(this.userInfo));
                       this.webService.putLikeBeers(this.PutBeersLike);
                       this.router.navigate([`/existUserForm`]);
               }
               else{
-                this.Message = "" + this.userInfo.Name + " is already in the Database";
+                this.Message = "" + this.userInfo.Name + " is already in the Database Or Phone Number Is All Ready Used.";
               }
 
-      });
+      });        
+      }
+      else{
+          this.Message = "Need to be Over 21, Sorry.";
+      }
     }
-
-
-
-
   }
-
-
-
-
     onItemSelect(item:any){
       console.log(item);
       console.log(this.selectedItems);
-      this.PutBeersLike = [];
-      this.selectedItems.forEach(select =>{
-          var temp = { 
-            Beer:select.itemName, 
-            Name: this.inputName
-          };      
-
-        this.PutBeersLike.push(temp);
-      });
     }
     OnItemDeSelect(item:any){
         console.log(item);
-        console.log(this.selectedItems);
-        this.PutBeersLike = [];
-        this.selectedItems.forEach(select =>{
-            var temp = { 
-              Beer:select.itemName, 
-              Name: this.inputName
-            };      
-
-          this.PutBeersLike.push(temp);
-        });      
+        console.log(this.selectedItems);   
     }
     onSelectAll(items: any){
         console.log(items);
-        this.PutBeersLike = [];
-        this.selectedItems.forEach(select =>{
-            var temp = { 
-              Beer:select.itemName, 
-              Name: this.inputName
-            };      
-
-          this.PutBeersLike.push(temp);
-        });
     }
     onDeSelectAll(items: any){
         console.log(items);
-        this.PutBeersLike = [];
     }
 }

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	  title = 'THE BEST BAR FINDER........lol';
+	  title = 'THE BEST BAR FINDER EVER!';
 	  loggedIn:boolean = false;
 
 	  

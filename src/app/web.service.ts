@@ -4,6 +4,8 @@ import {Headers} from '@angular/http';
 import { UserLoginDetails } from "app/model.client/UserLoginDetails";
 import { User } from "app/model.client/User";
 import { PutBeersLike } from "app/model.client/PutBeersLike";
+import { BarUpdate } from "app/model.client/BarUpdate";
+import { UserDiffCity } from "app/model.client/UserDiffCity";
 
 @Injectable()
 export class WebService {
@@ -60,6 +62,12 @@ export class WebService {
             '&PrefTime=' + user.PrefTime + 
             '&Music=' + user.Music + 
             '&Personality=' + user.Personality)
+        .map(res => res.json());
+    }
+    getIdealMatchCity(user:UserDiffCity){
+        return this.http.get('/api/getIdealMatchCity?Name='+ user.Name + 
+            '&City=' + user.City + 
+            '&PhoneNum=' + user.PhoneNum)
         .map(res => res.json());
     }
     getCheapBeerBar(user:User){
@@ -140,5 +148,29 @@ export class WebService {
             '&Music=' + user.Music + 
             '&Personality=' + user.Personality)
         .map(res => res.json());
+    }
+
+    getMyRatings(user:User){
+        return this.http.get('/api/getMyRatings?Name='+ user.Name + 
+            '&City=' + user.City + 
+            '&PhoneNum=' + user.PhoneNum + 
+            '&Age=' + user.Age + 
+            '&PrefTime=' + user.PrefTime + 
+            '&Music=' + user.Music + 
+            '&Personality=' + user.Personality)
+        .map(res => res.json());
+    }
+    getUpdateRating(newRating:BarUpdate){
+        return this.http.get('/api/getUpdateRating?Name='+ newRating.Name + 
+            '&PhoneNum=' + newRating.PhoneNum + 
+            '&Bar=' + newRating.Bar + 
+            '&rating=' + newRating.rating);
+    }
+
+
+
+    getAllCities(){
+        return this.http.get('/api/getAllCities')        
+        .map(res => res.json());;
     }
 }
