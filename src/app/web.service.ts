@@ -167,10 +167,19 @@ export class WebService {
             '&rating=' + newRating.rating);
     }
 
-
-
     getAllCities(){
         return this.http.get('/api/getAllCities')        
+        .map(res => res.json());;
+    }
+
+
+    beerCheck(){
+        return this.http.get('/api/beerCheck')        
+        .map(res => res.json());;
+    }
+
+    cityCheck(){
+        return this.http.get('/api/cityCheck')        
         .map(res => res.json());;
     }
 }

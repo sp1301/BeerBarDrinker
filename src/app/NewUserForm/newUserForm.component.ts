@@ -110,9 +110,85 @@ export class NewUserFormComponent implements OnInit {
     //console.log(picked);
   }
 
+  phoneChecker(phone:string):boolean{
 
+
+
+
+    var fields = phone.split(' ');
+    if(fields.length != 3){
+      return true;
+    }
+    else{
+      var isnum1 = /^\d+$/.test(fields[0]);
+      var isnum2 = /^\d+$/.test(fields[1]);
+      var isnum3 = /^\d+$/.test(fields[2]);
+
+      var islength1 = fields[0].length;
+      var islength2 = fields[1].length;
+      var islength3 = fields[2].length;
+
+      console.log(isnum1);
+      console.log(isnum2);
+      console.log(isnum3);
+      console.log(islength1);
+      console.log(islength2);
+      console.log(islength3);
+      if(islength1 != 3 || islength2 != 3 || islength3 != 4){
+        return true;
+      }
+
+      if(isnum1 == false || isnum2 == false || isnum3 == false){
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  timeChecker(time:string):boolean{
+    var fields = time.split(':');
+
+    if(fields.length != 2){
+      return true;
+    }
+    else{
+      var temp1 = +fields[0];
+      var temp2 = +fields[1];
+      var isnum1 = /^\d+$/.test(fields[0]);
+      var isnum2 = /^\d+$/.test(fields[1]);
+      var islength1 = fields[0].length;
+      var islength2 = fields[1].length;
+
+      if(isnum1 == false || isnum2 == false){
+        return true;
+      }
+      if(islength1 != 2 || islength2 != 2){
+        return true;
+      }
+      if(temp1 < 0 || temp1 > 23){
+        return true;
+      }
+      if(temp2 < 0 || temp2 > 59){
+        return true;
+      }
+    }
+
+    return false;
+
+  }
 
   Submit():void{
+
+    if(this.phoneChecker(this.inputPhone)){
+      this.Message = "Invalid Phone Number Format";
+      return;
+    }
+    if(this.timeChecker(this.inputHappy)){
+      this.Message = "Invalid Military Time";
+      return;
+    }
+
     this.userInfo.Name = this.inputName;
     this.userInfo.City = this.inputCity;
     this.userInfo.PhoneNum = this.inputPhone;

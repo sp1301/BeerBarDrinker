@@ -267,4 +267,27 @@ var query = connection.query(sql, filter, function (err, rows, fields) {
 });
 
 
+router.get('/beerCheck',function(req,res){
+
+var sql = "Select exists(Select * From SellBeers Where SellBeers.Price < 4 or SellBeers.Price > 8.99) as result";
+
+var query = connection.query(sql, function (err, rows, fields) {
+  if (err) throw err
+
+      res.send(JSON.stringify(rows));
+      res.end();
+})
+});
+
+router.get('/cityCheck',function(req,res){
+
+var sql = "Select exists(Select *From Drinkers, Frequent, Bars Where Drinkers.Name = Frequent.name and Drinkers.PhoneNum = Frequent.PhoneNum and Bars.Name = Frequent.Bar and Drinkers.City != Bars.City) as result";
+
+var query = connection.query(sql, function (err, rows, fields) {
+  if (err) throw err
+
+      res.send(JSON.stringify(rows));
+      res.end();
+})
+});
 module.exports = router;

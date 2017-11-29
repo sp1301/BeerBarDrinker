@@ -17,6 +17,7 @@ import { BeerPattern } from 'app/BeerPattern/beerPattern.component';
 import { ShowMyRating } from 'app/ShowMyRating/showMyRating.component';
 import { BarsAtDiffrentCities } from 'app/BarsAtDiffrentCities/barsAtDiffrentCities.component';
 import { DiffCityIdealBarFinder } from 'app/DiffCityIdealBarFinder/diffCityIdealBarFinder.component';
+import { Patterns } from 'app/Patterns/patterns.component';
 
 const ROUTES = [
   {
@@ -51,7 +52,12 @@ const ROUTES = [
   {
     path: 'newUserForm',
     component: NewUserFormComponent
+  },
+  {
+    path: 'patterns',
+    component: Patterns
   }
+
 ];
 
 @NgModule({
